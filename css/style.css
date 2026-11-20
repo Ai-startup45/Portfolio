@@ -156,28 +156,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .service:hover .service__thumbs img { filter: none; transform: translateY(-4px); }
 .service:hover .service__thumbs img:nth-child(2) { transform: translateY(-4px) rotate(4deg); }
 
-/* AI flow diagram: Claude -> brain <- Google Flow */
-.service--ai { row-gap: 20px; }
-.service--ai .service__thumbs { display: none; }
-.ai-flow { grid-column: 1 / -1; margin: 0; padding: var(--s3) var(--s2) var(--s2); border: 1px solid var(--line); border-radius: var(--radius); background: radial-gradient(ellipse at 50% 40%, rgba(255,77,46,.10), transparent 60%), var(--surface); }
-.ai-flow svg { width: 100%; max-width: 720px; height: auto; margin: 0 auto; display: block; overflow: visible; }
-.ai-flow figcaption { text-align: center; color: var(--mute); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
-.ai-flow__wire { fill: none; stroke: #4a4a4e; stroke-width: 2; stroke-dasharray: 2 6; stroke-linecap: round; }
-.ai-flow__pulse { fill: none; stroke: var(--rec); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 18 150; animation: aiflow 1.8s linear infinite; }
-.ai-flow__pulse--out { stroke: var(--paper); opacity: .7; animation-delay: -.9s; }
-@keyframes aiflow { from { stroke-dashoffset: 168; } to { stroke-dashoffset: 0; } }
-.ai-flow__node circle, .ai-flow__brain circle:not(.ai-flow__halo) { fill: var(--ink); stroke: var(--paper); stroke-width: 2; }
-.ai-flow__spark line { stroke: var(--paper); stroke-width: 5; stroke-linecap: round; }
-.ai-flow__ico { fill: none; stroke: var(--paper); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-.ai-flow__fill { fill: var(--paper); }
-.ai-flow__brain circle:not(.ai-flow__halo) { stroke: var(--rec); stroke-width: 3; }
-.ai-flow__brain .ai-flow__ico { stroke: var(--rec); }
-.ai-flow__halo { fill: none; stroke: var(--rec); stroke-width: 1.5; opacity: .35; transform-origin: center; transform-box: fill-box; animation: aihalo 2.4s ease-out infinite; }
-@keyframes aihalo { 0% { transform: scale(.85); opacity: .5; } 100% { transform: scale(1.25); opacity: 0; } }
-.ai-flow__label { fill: var(--mute); font: 700 15px var(--f-mono); letter-spacing: .1em; text-anchor: middle; }
-.ai-flow__label--me { fill: var(--rec); font-size: 17px; }
-.service:hover .ai-flow__node circle { stroke: var(--rec); }
-@media (max-width: 600px) { .ai-flow__label { font-size: 20px; } .ai-flow__label--me { font-size: 22px; } .ai-flow figcaption { font-size: 11px; } }
+/* Tool logo tiles (AI row) */
+.logo-tile { width: 68px; height: 68px; border-radius: 12px; border: 1px solid var(--line); background: #000; display: grid; place-items: center; transition: transform .4s var(--ease-out), border-color .3s; }
+.logo-tile img { width: 40px; height: 40px; object-fit: contain; }
+.logo-tile:first-child { background: var(--surface); }
+.logo-tile:nth-child(2) img { width: 60px; height: 60px; border-radius: 10px; }
+.service:hover .logo-tile { transform: translateY(-4px); border-color: #3a3a3d; }
+.service:hover .logo-tile:nth-child(2) { transform: translateY(-4px) rotate(4deg); }
 
 /* Work */
 .clients { color: var(--mute); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; margin: calc(-1 * var(--s3)) 0 var(--s5); }

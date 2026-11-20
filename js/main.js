@@ -24,44 +24,14 @@
   $("#facts").innerHTML = S.about.facts.map(function (f) { return "<div class='reveal'><dt>" + esc(f.k) + "</dt><dd>" + esc(f.v) + "</dd></div>"; }).join("");
 
 
-  // Claude -> my brain <- Google Flow (stylised icons, not official logos)
-  var AI_DIAGRAM =
-    "<figure class='ai-flow' role='img' aria-label='Claude and Google Flow both connect to my brain: I use AI tools with my own judgment.'>" +
-    "<svg viewBox='40 24 640 160' aria-hidden='true'>" +
-      // connector lines (two directions each, so data flows both ways)
-      "<path class='ai-flow__wire' d='M150 82 C 240 82, 250 82, 318 82'/>" +
-      "<path class='ai-flow__wire' d='M570 82 C 480 82, 470 82, 402 82'/>" +
-      "<path class='ai-flow__pulse ai-flow__pulse--in' d='M150 76 C 240 76, 250 76, 318 76'/>" +
-      "<path class='ai-flow__pulse ai-flow__pulse--out' d='M318 88 C 250 88, 240 88, 150 88'/>" +
-      "<path class='ai-flow__pulse ai-flow__pulse--in' d='M570 76 C 480 76, 470 76, 402 76'/>" +
-      "<path class='ai-flow__pulse ai-flow__pulse--out' d='M402 88 C 470 88, 480 88, 570 88'/>" +
-      // Claude node (left): spark
-      "<g class='ai-flow__node' transform='translate(100 82)'><circle r='46'/>" +
-        "<g class='ai-flow__spark'>" +
-        [0, 30, 60, 90, 120, 150].map(function (a) { return "<line x1='0' y1='-24' x2='0' y2='24' transform='rotate(" + a + ")'/>"; }).join("") +
-        "</g></g>" +
-      // Google Flow node (right): play frame with motion lines
-      "<g class='ai-flow__node' transform='translate(620 82)'><circle r='46'/>" +
-        "<rect x='-22' y='-16' width='44' height='32' rx='7' class='ai-flow__ico'/>" +
-        "<path d='M-5 -8 L9 0 L-5 8 Z' class='ai-flow__fill'/>" +
-        "<path d='M-34 -6 h7 M-36 2 h9 M-33 10 h6' class='ai-flow__ico'/>" +
-      "</g>" +
-      // Brain (centre)
-      "<g class='ai-flow__brain' transform='translate(360 82)'><circle r='58' class='ai-flow__halo'/><circle r='46'/>" +
-        "<path class='ai-flow__ico' d='M-3 -26 C -10 -32 -24 -30 -26 -18 C -36 -16 -38 -2 -30 4 C -36 12 -30 26 -18 25 C -14 32 -4 32 -3 26 Z'/>" +
-        "<path class='ai-flow__ico' d='M3 -26 C 10 -32 24 -30 26 -18 C 36 -16 38 -2 30 4 C 36 12 30 26 18 25 C 14 32 4 32 3 26 Z'/>" +
-        "<path class='ai-flow__ico' d='M-20 -10 C -14 -8 -12 -2 -16 3 M-22 12 C -15 10 -10 14 -10 19 M20 -10 C 14 -8 12 -2 16 3 M22 12 C 15 10 10 14 10 19 M0 -24 V24'/>" +
-      "</g>" +
-      "<text x='100' y='160' class='ai-flow__label'>CLAUDE</text>" +
-      "<text x='360' y='172' class='ai-flow__label ai-flow__label--me'>MY BRAIN</text>" +
-      "<text x='620' y='160' class='ai-flow__label'>GOOGLE FLOW</text>" +
-    "</svg>" +
-    "<figcaption class='mono'>The tools do the heavy lifting. I make the calls.</figcaption></figure>";
   $("#services").innerHTML = S.services.map(function (s, i) {
-    var th = (s.thumbs || []).map(function (t) { return "<img src='" + t + "' alt='' loading='lazy' width='76' height='76'>"; }).join("");
-    return "<li class='service reveal" + (s.diagram ? " service--ai" : "") + "'><h3 class='service__name'><span class='mono'>0" + (i + 1) + "</span>" + esc(s.name) + "</h3>" +
-      "<p class='service__line'>" + esc(s.line) + "</p><div class='service__thumbs' aria-hidden='true'>" + th + "</div>" +
-      (s.diagram ? AI_DIAGRAM : "") + "</li>";
+    var th = (s.thumbs || []).map(function (t) {
+      var logo = t.indexOf("/logos/") > -1, name = logo ? (t.indexOf("claude") > -1 ? "Claude" : "Google Flow") : "";
+      return logo ? "<span class='logo-tile' title='" + name + "'><img src='" + t + "' alt='" + name + " logo' loading='lazy' width='40' height='40'></span>"
+                  : "<img src='" + t + "' alt='' loading='lazy' width='76' height='76'>";
+    }).join("");
+    return "<li class='service reveal'><h3 class='service__name'><span class='mono'>0" + (i + 1) + "</span>" + esc(s.name) + "</h3>" +
+      "<p class='service__line'>" + esc(s.line) + "</p><div class='service__thumbs'" + (s.thumbs && s.thumbs.some(function (t) { return t.indexOf('/logos/') > -1; }) ? "" : " aria-hidden='true'") + ">" + th + "</div>" + "</li>";
   }).join("");
 
   $("#clients").innerHTML = "Clients: " + S.projects.map(function (p) { return "<b>" + esc(p.client) + "</b>"; }).join(" ✺ ");
