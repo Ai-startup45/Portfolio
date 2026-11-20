@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Priyanshu Chatterjee · Video Editor &amp; Motion Designer, Delhi</title>
+  <meta name="description" content="Priyanshu Chatterjee is a Delhi-based video editor and motion designer making short-form Reels, motion graphics and AI-assisted video. Open for freelance projects and agency internships.">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="canonical" href="https://priyanshuchatterjee.vercel.app/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://priyanshuchatterjee.vercel.app/">
+  <meta property="og:title" content="Priyanshu Chatterjee · Video Editor & Motion Designer">
+  <meta property="og:description" content="Short-form Reels, motion graphics and AI-assisted video from Delhi. Open for freelance projects and agency internships.">
+  <meta property="og:image" content="https://priyanshuchatterjee.vercel.app/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/anton.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="assets/img/hero-poster.jpg">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Priyanshu Chatterjee","jobTitle":"Video Editor & Motion Designer","address":{"@type":"PostalAddress","addressLocality":"Delhi","addressCountry":"IN"},"alumniOf":"Shaheed Bhagat Singh College, University of Delhi","email":"mailto:hello.thebreakthrough@gmail.com","url":"https://priyanshuchatterjee.vercel.app/","sameAs":["https://www.instagram.com/ft.priyanshu.__/","https://www.linkedin.com/in/priyanshu-chatterjee-85b892311/"]}
+  </script>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- LOADER: short counter, skippable, never longer than ~1.2 s -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__top"><span class="rec-dot"></span><span class="mono">LOADING REEL</span></div>
+    <div class="loader__count mono" id="loaderCount">0</div>
+    <button class="loader__skip mono" id="loaderSkip" type="button">Skip →</button>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#intro" aria-label="Priyanshu Chatterjee, back to top">
+      <span class="mono-badge">PC</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#intro">Intro</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <span class="status"><span class="status__dot"></span><span data-text="available"></span></span>
+      <a class="btn btn--rec btn--sm" data-href="mailto" href="#contact">Email me</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="intro" aria-labelledby="heroName">
+      <div class="hero__copy">
+        <p class="eyebrow mono rise"><span data-text="city"></span> · <span data-text="role"></span></p>
+        <h1 class="hero__name wave" id="heroName" data-text="name"></h1>
+        <p class="hero__tagline rise" data-text="tagline"></p>
+        <div class="hero__ctas rise">
+          <a class="btn btn--rec" data-href="mailto">Email me <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" data-href="igdm" target="_blank" rel="noopener">DM on Instagram <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero__media rise" id="heroMedia">
+        <button class="phone" id="reelOpen" type="button" aria-label="Play my 30-second showreel with sound">
+          <video class="phone__video" id="heroVideo" muted loop playsinline preload="none" poster="assets/img/hero-poster.jpg" aria-hidden="true">
+            <source src="assets/video/hero-loop.mp4" type="video/mp4">
+          </video>
+          <span class="phone__play"><span class="play-icon" aria-hidden="true"></span><span class="mono">Watch showreel · 30 s</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ROLE TICKER -->
+    <div class="ticker" aria-label="Roles"><div class="ticker__track" id="ticker"></div></div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="aboutTitle">
+      <p class="label mono">01 · About</p>
+      <h2 class="section__title wave" id="aboutTitle">Think before editing.</h2>
+      <div class="about__grid">
+        <div class="about__text" id="aboutText"></div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+      <p class="about__looking"><span class="status__dot"></span><span data-text="lookingFor"></span></p>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="section services" aria-labelledby="servicesTitle">
+      <p class="label mono">02 · What I do</p>
+      <h2 class="section__title wave" id="servicesTitle">What I do.</h2>
+      <ul class="services__list" id="services"></ul>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section class="section work" id="work" aria-labelledby="workTitle">
+      <p class="label mono">03 · Selected client work</p>
+      <h2 class="section__title wave" id="workTitle">Client work.</h2>
+      <p class="clients mono" id="clients"></p>
+      <div class="work__list" id="projects"></div>
+    </section>
+
+    <!-- 3D TIMELINE MOMENT -->
+    <section class="timeline3d" aria-label="A 3D film strip of frames from my edits">
+      <div class="film" id="film" aria-hidden="true"><div class="film__ring" id="filmRing"></div></div>
+      <p class="timeline3d__line">Every frame, <em>on purpose.</em></p>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="section tools" aria-labelledby="toolsTitle">
+      <p class="label mono">04 · Toolkit</p>
+      <h2 class="section__title wave" id="toolsTitle">My toolkit.</h2>
+      <ul class="tools__list" id="tools"></ul>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section edu" aria-labelledby="eduTitle">
+      <p class="label mono">05 · Education</p>
+      <h2 class="visually-hidden" id="eduTitle">Education</h2>
+      <div class="edu__row" id="edu"></div>
+    </section>
+  </main>
+
+  <!-- CONTACT FOOTER -->
+  <footer class="footer" id="contact" aria-labelledby="contactTitle">
+    <p class="label mono">06 · Contact</p>
+    <h2 class="footer__title wave" id="contactTitle">Let's work together.</h2>
+    <div class="footer__ctas">
+      <a class="footer__email" data-href="mailto" data-text="email"></a>
+      <button class="btn btn--ghost btn--sm" id="copyEmail" type="button">Copy email</button>
+    </div>
+    <div class="footer__ctas">
+      <a class="btn btn--rec" data-href="igdm" target="_blank" rel="noopener">DM me on Instagram <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer__meta">
+      <ul class="socials">
+        <li><a data-href="ig" target="_blank" rel="noopener">Instagram <span class="mono" data-text="ighandle"></span></a></li>
+        <li><a data-href="linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <p class="mono footer__time">Delhi · <span id="istTime">--:--</span> IST</p>
+      <p class="mono footer__copy">© <span id="year"></span> <span data-text="name"></span></p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+    <div class="lightbox__inner" id="lightboxInner"></div>
+    <div class="lightbox__bar">
+      <a class="mono lightbox__yt" id="lightboxYT" target="_blank" rel="noopener" hidden>Open on YouTube ↗</a>
+      <button class="lightbox__close mono" id="lightboxClose" type="button">Close ✕</button>
+    </div>
+  </div>
+
+  <noscript><p style="padding:24px;color:#F2F0EB">Priyanshu Chatterjee, Video Editor &amp; Motion Designer, Delhi. Email: hello.thebreakthrough@gmail.com · Instagram: @ft.priyanshu.__</p></noscript>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
