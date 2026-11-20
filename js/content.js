@@ -39,7 +39,7 @@ window.SITE = {
     { name: "Motion graphics", line: "Words that move with the voice. Kinetic captions, animated icons and branded end cards that turn a talking head into something people watch twice.", thumbs: ["assets/img/s3.jpg", "assets/img/s4.jpg"] },
     { name: "Colour grading", line: "Phone footage, cinema mood. Harsh sun tamed, skin tones kept true, one consistent look from the first shot to the last.", thumbs: ["assets/img/s5.jpg", "assets/img/s6.jpg"] },
     { name: "Sound design", line: "The half of video you feel before you notice it. Cuts on the beat, a hit on every transition, and a mix that stays punchy even on a phone speaker.", thumbs: ["assets/img/s7.jpg", "assets/img/s8.jpg"] },
-    { name: "AI-assisted production", line: "AI as my crew, not my crutch. Claude shapes scripts and edit plans, Google Flow creates the shots a camera can't, so ideas reach the timeline faster.", thumbs: [] }
+    { name: "AI-assisted production", line: "AI as my crew, not my crutch. Claude shapes scripts and edit plans, Google Flow creates the shots a camera can't, so ideas reach the timeline faster.", thumbs: [], diagram: true }
   ],
 
   // Featured client projects
