@@ -54,7 +54,8 @@
   }).join("");
 
   var e = S.education;
-  $("#edu").innerHTML = "<span class='edu__deg'>" + esc(e.degree) + "</span><span class='edu__college'>" + esc(e.college) + "</span><span class='edu__uni mono'>" + esc(e.university) + "</span>";
+  $("#facts").innerHTML += "<div class='facts__wide reveal'><dt>Education</dt><dd>" + esc(e.degree) + "</dd><p>" + esc(e.college) + ", " + esc(e.university) + "</p></div>" +
+    "<div class='facts__wide facts__looking reveal'><dt><span class='status__dot'></span>Looking for</dt><p>" + esc(S.about.lookingFor) + "</p></div>";
   $("#year").textContent = new Date().getFullYear();
 
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -230,9 +231,6 @@
     var done = function () { copyBtn.textContent = "Copied ✓"; setTimeout(function () { copyBtn.textContent = "Copy email"; }, 1800); };
     if (navigator.clipboard) navigator.clipboard.writeText(S.email).then(done, function () {}); else done();
   });
-  var timeEl = $("#istTime");
-  function clock() { timeEl.textContent = new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hour12: true }); }
-  clock(); setInterval(clock, 15000);
 
   /* ---------- 10. 3D film strip: frames on a rotating ring (CSS 3D, no library) ---------- */
   (function film() {

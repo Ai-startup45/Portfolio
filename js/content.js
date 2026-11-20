@@ -17,7 +17,7 @@ window.SITE = {
   roles: ["Video Editor", "Motion Designer", "AI-Assisted Video", "Colour Grading", "Sound Design"],
 
   email: "hello.thebreakthrough@gmail.com",
-  instagram: { handle: "@ft.priyanshu.__", url: "https://www.instagram.com/ft.priyanshu.__/", dm: "https://ig.me/m/ft.priyanshu.__" },
+  instagram: { handle: "@ft.priyanshu.__", url: "https://www.instagram.com/ft.priyanshu.__/", dm: "https://www.instagram.com/ft.priyanshu.__/" },
   linkedin: "https://www.linkedin.com/in/priyanshu-chatterjee-85b892311/",
 
   about: {
@@ -28,18 +28,18 @@ window.SITE = {
     facts: [
       { k: "Editing since", v: "June 2026" },
       { k: "Client projects", v: "2 shipped" },
-      { k: "Studying", v: "B.Com (Hons.)" },
-      { k: "Based in", v: "Delhi" }
+      { k: "Based in", v: "Delhi" },
+      { k: "Works", v: "Remote + hybrid" }
     ],
     lookingFor: "Project-based freelance work and internships with marketing agencies. Remote, or hybrid in Delhi."
   },
 
   services: [
-    { name: "Short-form Reels", line: "Hook-first edits for Instagram Reels and YouTube Shorts, built for silent autoplay.", thumbs: ["assets/img/s1.jpg", "assets/img/s2.jpg"] },
-    { name: "Motion graphics", line: "Kinetic captions, animated icons, titles and end cards in After Effects.", thumbs: ["assets/img/s3.jpg", "assets/img/s4.jpg"] },
-    { name: "Colour grading", line: "Correcting and grading phone footage in DaVinci Resolve so it looks shot on purpose.", thumbs: ["assets/img/s5.jpg", "assets/img/s6.jpg"] },
-    { name: "Sound design", line: "Music, SFX and voice levels mixed for phone speakers, to the -14 LUFS social standard.", thumbs: ["assets/img/s7.jpg", "assets/img/s8.jpg"] },
-    { name: "AI-assisted production", line: "Scripting, planning and asset generation with Claude and Google Flow, to deliver faster." , thumbs: [] }
+    { name: "Short-form Reels", line: "Built for the first two seconds. A hook that stops the thumb, pacing that holds it, and an ending that makes people act.", thumbs: ["assets/img/s1.jpg", "assets/img/s2.jpg"] },
+    { name: "Motion graphics", line: "Words that move with the voice. Kinetic captions, animated icons and branded end cards that turn a talking head into something people watch twice.", thumbs: ["assets/img/s3.jpg", "assets/img/s4.jpg"] },
+    { name: "Colour grading", line: "Phone footage, cinema mood. Harsh sun tamed, skin tones kept true, one consistent look from the first shot to the last.", thumbs: ["assets/img/s5.jpg", "assets/img/s6.jpg"] },
+    { name: "Sound design", line: "The half of video you feel before you notice it. Cuts on the beat, a hit on every transition, and a mix that stays punchy even on a phone speaker.", thumbs: ["assets/img/s7.jpg", "assets/img/s8.jpg"] },
+    { name: "AI-assisted production", line: "AI as my crew, not my crutch. Claude shapes scripts and edit plans, Google Flow creates the shots a camera can't, so ideas reach the timeline faster.", thumbs: [] }
   ],
 
   // Featured client projects
